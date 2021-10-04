@@ -1,0 +1,109 @@
+$accounts-transition: all .3s ease-in-out;
+
+.Accounts {
+  &__wrapper {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    margin-bottom: 20px;
+  }
+
+  &__button {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: #ffffff;
+    border: 0 solid;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    transition: all 0.3s linear;
+
+    &-currency-title {
+      font-size: 15px;
+      font-weight: 500;
+      line-height: 23px;
+
+      &::before {
+        display: inline-block;
+        margin-right: 10px;
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        font-weight: 500;
+        font-size: 18px;
+        color: #ffffff;
+        text-align: center;
+        border-radius: 50%;
+      }
+
+      &.euro::before {
+        content: "\20AC";
+        background-color: #42507f;
+      }
+
+      &.dollar::before {
+        content: "\0024";
+        background-color: #f5855c;
+      }
+
+      &.pound::before {
+        content: "\00A3";
+        background-color: #2eff38;
+      }
+
+      &.korea-won::before {
+        content: "\FFE6";
+        background-color: #ffac30;
+      }
+    }
+
+    &-currency-balance {
+      // flex-grow: 1;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 30px;
+
+      &.euro::before {
+        content: "\20AC"; 
+      }
+
+      &.dollar::before {
+        content: "\0024";
+      }
+
+      &.pound::before {
+        content: "\00A3";
+      }
+
+      &.korea-won::before {
+        content: "\FFE6";
+      }
+    }
+
+    &:hover, &.active {
+      background: linear-gradient(180deg, #fd3a6c 0%, #f5855c 100%);
+      box-shadow: 0px 0px 7px #ee4874;
+      color: #ffffff;
+
+      .Accounts__button-currency-title {
+        &::before {
+          background-color: #ffffff;
+          color: #fd3a6c;
+        }
+      }
+    }
+  }
+}
